@@ -60,15 +60,17 @@ end
 class Towers_of_Hanoi
     attr_reader :size, :board
 
-    def initialize(size)
-        @size = size
+    def initialize
+        print "Enter the number of disks: "
+        disks = gets.chomp.to_i
+        @size = disks
         @board = Array.new(3) { Array.new }
         self.populate
     end
 
     def populate
         # disk 1 is the top
-        @board[0] = (1..size).to_a
+        @board[0] = (1..@size).to_a
     end
 
     def get_move
@@ -82,7 +84,7 @@ class Towers_of_Hanoi
     end
 
     def won?
-        @board.last == (1..size).to_a
+        @board.last == (1..@size).to_a
     end
 
     def valid_move?(pos)
@@ -123,5 +125,5 @@ class Towers_of_Hanoi
 
 end
 
-# game = Towers_of_Hanoi.new(1)
-# game.play
+game = Towers_of_Hanoi.new
+game.play
