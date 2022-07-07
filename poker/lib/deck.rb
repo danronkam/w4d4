@@ -6,13 +6,13 @@ class Deck
 
     SUITS = [:D, :C, :H, :S]
     COLOR = [:R, :B]
-    VALUE = [1,2,3,4,5,6,7,8,9,10,:J,:Q,:K,:A]
+    VALUE = [2,3,4,5,6,7,8,9,10,:J,:Q,:K,:A]
 
     def initialize
         @deck = []
         self.build_deck(:R)
         self.build_deck(:B)
-        deck.shuffle
+        @deck.shuffle!
     end
 
     def build_deck(color)
@@ -27,5 +27,8 @@ class Deck
         end
     end
 
-
 end
+
+# a = Deck.new
+# p a
+# p a.deck.length
