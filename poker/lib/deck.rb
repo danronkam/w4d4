@@ -28,7 +28,3 @@ class Deck
     end
 
 end
-
-# a = Deck.new
-# p a
-# p a.deck.length

@@ -1,15 +1,15 @@
 
 
 class Player
-    attr_reader :hand, :id
+    attr_reader :id
+    attr_accessor :hand, :bank, :folded
 
-    def initialize(id, hand)
-        @id = 'Player #{id}'
-        @hand = hand
+    def initialize(number, bank)
+        @id = 'Player' + number.to_s
+        @hand = []
+        @bank = bank
+        @folded = false
     end
-
-
-
 
 
 end
